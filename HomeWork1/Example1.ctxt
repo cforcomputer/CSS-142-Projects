@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.target=Example1
+comment1.params=m\ h
+comment1.target=double\ bmiOne(double,\ double)
+comment2.params=w\ h
+comment2.target=double\ bmiTwo(double,\ double)
+comment3.params=bmi
+comment3.target=void\ bmiPrinter(double)
+comment4.params=args
+comment4.target=void\ main(java.lang.String[])
+numComments=5

@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=H2P2
+comment1.params=args
+comment1.target=void\ main(java.lang.String[])
+comment2.params=basePay\ hoursWorked
+comment2.target=double\ salaryTotal(double,\ double)
+numComments=3
