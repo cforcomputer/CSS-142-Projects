@@ -27,28 +27,42 @@ import java.util.*;
  * */
 
 public class Greencrud {
-    public static void main(String[] args) {
+
+    public static void main(String[] args) throws FileNotFoundException {
+        PrintStream fileOut = new PrintStream(new File("crudout.txt"));
+        System.setOut(fileOut);
+        Scan(); //read the output of class Scan()
+    }
+
+    public static void Scan() {
+
         Scanner fileIn = null;
-        try {
+
+        try { //if file does not exist: print "Error 404: file not found"
             fileIn = new Scanner(new File("greencrud.txt"));
         }
-        catch(FileNotFoundException FNFE) {
-            System.out.println("File not fund ");
+        catch(FileNotFoundException E) {
+            System.out.println("Error 404: File not found.");
         }
-        if(fileIn!=null) {
+
+        if (fileIn != null) { //if file has something in it and exists
+            //while file has another line
             while(fileIn.hasNext()) {
-                int initial_size = 0;
-                int next_size = fileIn.nextInt();
-                int number_of_days = fileIn.nextInt();
-                int end_size=0;
-                for(int i=1; i<=number_of_days; i+=5) {
-                    end_size = initial_size + next_size;
-                    initial_size = next_size;
-                    next_size = end_size;
+                int startSize = 0;
+                int nextSize = fileIn.nextInt(); //check next size
+                int amountOfDays = fileIn.nextInt(); //check the number of days
+                int finalSize=0; //check the final size
+
+                for(int i=1; i <= amountOfDays; i+=5) { //i =1 if i less than or equal to number_of_days add i to 5
+                    finalSize = startSize + nextSize; //calculate the total size of the population
+                    startSize = nextSize;
+                    nextSize = finalSize; //start size = next size and next size = >>>final size<<<
                 }
-                System.out.println("After "+number_of_days + " days Size of population is " + end_size);
+                //PrintStream fileOut = new PrintStream(new File("crudout.txt"));
+                //System.setOut(fileOut);
+                System.out.println("After " + amountOfDays + " days Size of population is " + finalSize);
             }
-            fileIn.close();
+            fileIn.close(); //close the file
         }
     }
 }

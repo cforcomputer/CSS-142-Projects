@@ -1,3 +1,4 @@
+import java.util.*;
 /**
  * Problem 2. (Compound Interest) If an amount a is invested at an interest rate r
  * compounded n times per year, then the final value f at the end of one year is given by f
@@ -26,31 +27,45 @@
 
 public class CompoundInterest {
 
-            public static double calculateCompoundInterest(double a,double r,int n )
+    public static void main(String[] args) {
 
-        {
+        for (int i = 0; i <= 4; i++ ) { //repeat 5 times for test parameters
 
-            r=r/100;//dividing rate of interest into percent
-            double amount=(1+r/n);//calculating the value that was in the formula and storing in amount
-            double product=1;
-            for(int i=1;i<=n;i++)//calculating n power of amount
+            Scanner keyInput = new Scanner(System.in);
+            System.out.print("Want to calculate a set of numbers? (Y or N)? "); //prompt to continue
+            String answer;
+            answer = keyInput.next(); //user input for prompt
 
-            {
-                product*=amount;
+            if ((answer.equalsIgnoreCase("n") || answer.equalsIgnoreCase("no"))) {
+                System.exit(0); //exit program if user input == no
             }
 
-            amount=product*a;//calculating amount with initial amount
-            return amount;//returning amount
-        }
+            if ((answer.equalsIgnoreCase("y") || answer.equalsIgnoreCase("yes"))) {
 
-        public static void main(String[] args) {
+                System.out.println("Please enter a");
+                double a = keyInput.nextDouble();
+                System.out.println("Please enter r");
+                double r = keyInput.nextDouble();
+                System.out.println("Please enter n");
+                int n = keyInput.nextInt();
+                //calling function and printing results
+                System.out.println(calculateCompoundInterest(a, r, n));
 
-            //calling function and printing results
-            System.out.println(calculateCompoundInterest(100, 5, 1));
-            System.out.println(calculateCompoundInterest(100, 5, 4));
-            System.out.println(calculateCompoundInterest(100, 5, 365));
-            System.out.println(calculateCompoundInterest(100, 5, 1000));
-            System.out.println(calculateCompoundInterest(100, 5, 10000));
-
+            }
         }
     }
+
+        public static double calculateCompoundInterest(double a,double r,int n ) {
+
+        r=r/100;//converting to percent
+        double amount=(1+r/n);//calculating the value that was in the formula and storing in amount
+        double product=1;
+
+        for(int i=1;i<=n;i++) {//calculate the power for the amount
+                product*=amount;
+            }
+            amount=product*a;//calculating amount with initial amount
+        return amount;//returning amount
+    }
+}
+

@@ -8,6 +8,7 @@ import java.util.Scanner; //scanner package was not imported.
  * */
 
 public class Average {
+
     public static void main(String[] args) {
         int n = 0, numInput; //incompatible types, change to int, has to be 0 because no input
         Scanner scanner = new Scanner(System.in); //System not capitalized

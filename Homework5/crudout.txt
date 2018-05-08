@@ -1,0 +1,7 @@
+After 10 days Size of population is 24
+After 30 days Size of population is 52
+After 18 days Size of population is 140
+After 13 days Size of population is 21
+After 10 days Size of population is 34
+After 35 days Size of population is 189
+After 20 days Size of population is 50

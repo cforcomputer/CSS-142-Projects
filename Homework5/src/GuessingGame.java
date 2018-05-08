@@ -29,57 +29,61 @@ import java.util.*;
 public class GuessingGame {
 
     public static void main(String[] args) {
-
+        //run testCalculation class and start program
         testCalculation();
     }
 
     public static void testCalculation() {
-        try {
+        try { //start try-catch block
             Random randomNumber = new Random();
-            int numberToGuess, numberOfTries;
+            int numberToGuess, numberOfTries, playerGuess; //initiate ints
 
             Scanner keyInput = new Scanner(System.in);
-            int playerGuess;
             boolean win;
             boolean playAgain = true;
-            String ans;
+            String answer;
 
-            while (playAgain == true) {
-                numberToGuess = randomNumber.nextInt(100) + 1;
-                numberOfTries = 0;
-                win = false;
+            while (playAgain == true) { //while play again is equal to true, run loop
+                numberToGuess = randomNumber.nextInt(100) + 1; //difference of 1 range of 100
+                numberOfTries = 0; //start tries at 0
+                win = false; //win is false while playAgain = true
                 System.out.println("Please guess a number between 1 and 100");
 
-                while (win == false) {
+                while (win == false) { //run this loop if the player has not won
                     System.out.print("\nEnter your number: ");
-                    playerGuess = keyInput.nextInt();
+                    playerGuess = keyInput.nextInt(); //takes the int input from the player
                     numberOfTries++;
+                    //if player guess is the correct number, then win == true and the player wins the game.
                     if (playerGuess == numberToGuess) {
                         win = true;
+                        //if the player guess is larger than, print
                     } else if (playerGuess > numberToGuess) {
                         System.out.println("Too high! Guess again: ");
+                        //if the player is less than, print.
                     } else if (playerGuess < numberToGuess) {
                         System.out.println("Too low! Guess again!");
                     }
                 }
-
+                //if the win condition is met, print
                 if (win == true) {
                     System.out.println("Good job! You got it right after " + numberOfTries + " guesses!");
                 }
-
+                //then if the win condition is met, start nested if-else
                 if (win == true) {
-
+                    //prompt the player to play again
                     System.out.print("Want to play again (Y or N)? ");
-                    ans = keyInput.next();
-
-                    if (ans.equalsIgnoreCase("y") || ans.equalsIgnoreCase("yes"))
+                    answer = keyInput.next();
+                    //take the player input after the prompt and check answer string for condition
+                    //if player enters yes, then repeat loop
+                    if (answer.equalsIgnoreCase("y") || answer.equalsIgnoreCase("yes"))
                         playAgain = true;
-
+                    //if player enters anything that is not yes, exit the program.
                     else
                         playAgain = false;
+                        System.exit(0);
                 }
             }
-
+        //catch exception that is not int while running, for instance "exit" or "q"
         } catch (Exception e) {
             String answer;
             Scanner keyInput = new Scanner(System.in);
@@ -88,9 +92,9 @@ public class GuessingGame {
             answer = keyInput.next();
 
             if (answer.equalsIgnoreCase("y") || answer.equalsIgnoreCase("yes"))
-            testCalculation();
+            testCalculation(); //if user does want to restart after the error, enter Y or yes
             else
-                System.exit(0);
+                System.exit(0); //otherwise exit
         }
     }
 }
