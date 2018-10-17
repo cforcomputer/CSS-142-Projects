@@ -5,7 +5,7 @@ all he/she needs to know. The comments should usually include at least:
 ------------------------------------------------------------------------
 
 PROJECT TITLE:
-PURPOSE OF PROJECT:
+PURPOSE OF PROJECT: Distance traveled calculator | BMI calculator | Remaining change calculator
 VERSION or DATE:
 HOW TO START THIS PROJECT:
 AUTHORS:
