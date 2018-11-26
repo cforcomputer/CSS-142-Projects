@@ -9,15 +9,17 @@ public class RockPaperScissorGame {
     private static int totalAI_Wins = 0;
     private static int totalPlayerWins = 0;
 
-    private static String moves[] = {"Rock" , "Paper" , "Scissor"};
+    //Assigns the different possible moves
+    private static String moves[] = {"Rock" , "Paper" , "Scissor", "Spock"};
 
-
+    // Assigns string array RESULTS to WIN or LOSS for method Outcome
     private static ca141.robward.Outcome[][] outcome = {
 
             { ca141.robward.Outcome.Draw , ca141.robward.Outcome.Loss , ca141.robward.Outcome.Win} ,
             { ca141.robward.Outcome.Win , ca141.robward.Outcome.Draw , ca141.robward.Outcome.Loss} ,
             { ca141.robward.Outcome.Loss ,  ca141.robward.Outcome.Win , ca141.robward.Outcome.Draw }  };
 
+    // all results stored in a multidimensional array
     private static String results[][] = {
 
             {"Rock versus Rock Tie" , "Rock Covered by Paper" , "Rock smashes Scissor"},
@@ -40,48 +42,47 @@ public class RockPaperScissorGame {
         super();
         this.winningTotal = winningTotal;
     }
-
+    // Constructor
     public static int getTotalAI_Wins()
     {
         return totalAI_Wins;
     }
-
+    // Constructor
     public static int getTotalPlayerWins()
     {
         return totalPlayerWins;
     }
-
+    // Constructor
     public int getCurrentPlayerWins()
     {
         return currentPlayerWins;
     }
-
+    // Constructor
     public int getGamesPlayed()
     {
         return gamesPlayed;
     }
-
+    // Constructor
     public int getPlayerScore()
     {
         return playerScore;
     }
-
+    // Constructor
     public int getPlayerMove()
     {
         return playerMove;
     }
-
+    // Constructor
     public int getAI_Move()
     {
         return AI_Move;
     }
-
-
+    // Constructor
     public boolean isGameOver()
     {
         return gameOver;
     }
-
+    //
     public String moveChoices()
     {
         String choices ="";
@@ -92,18 +93,16 @@ public class RockPaperScissorGame {
         }
         return choices;
     }
-
-
+    // Input player's move and the ai's move to calculate results --> move outcome
     public String moveOutcome()
     {
         return results[playerMove][AI_Move];
     }
-
+    // Bring value of player Move and AI move into outcome to calculate the player outcome
     public ca141.robward.Outcome getPlayerOutcome()
     {
         return outcome[playerMove][AI_Move];
     }
-
 
     public ca141.robward.Outcome getAIOutcome()
     {
@@ -179,7 +178,6 @@ public class RockPaperScissorGame {
         gameOver = false;
 
     }
-
 
     public void playRound(int playerMove)
     {
