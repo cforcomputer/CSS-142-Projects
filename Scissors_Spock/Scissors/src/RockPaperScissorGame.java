@@ -1,7 +1,5 @@
 package ca141.robward;
-
 import java.util.Random;
-
 
 public class RockPaperScissorGame {
 
@@ -17,36 +15,25 @@ public class RockPaperScissorGame {
     private static ca141.robward.Outcome[][] outcome = {
 
             { ca141.robward.Outcome.Draw , ca141.robward.Outcome.Loss , ca141.robward.Outcome.Win} ,
-
             { ca141.robward.Outcome.Win , ca141.robward.Outcome.Draw , ca141.robward.Outcome.Loss} ,
-
             { ca141.robward.Outcome.Loss ,  ca141.robward.Outcome.Win , ca141.robward.Outcome.Draw }  };
-
-
 
     private static String results[][] = {
 
             {"Rock versus Rock Tie" , "Rock Covered by Paper" , "Rock smashes Scissor"},
-
             {"Paper covers Rock" , "Paper versus Paper Tie" , "Paper cut by Scissor"},
-
             {"Scissor smashed by Rock" , "Scissor cuts Paper" , "Scissor versus Scissor Tie"}
-
     };
-
-
 
     private int winningTotal = 0;
     private int currentPlayerWins = 0;
     private int gamesPlayed = 0;
-
 
     private int playerScore = 0;
     private int AI_Score = 0;
     private boolean gameOver = false;
     private int playerMove = 0;
     private int AI_Move = 0;
-
 
     public RockPaperScissorGame(int winningTotal)
     {

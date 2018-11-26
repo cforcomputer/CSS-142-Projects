@@ -5,23 +5,17 @@ public class PlayGame {
 
     public static void main(String[] args)
     {
-
         ca141.robward.RockPaperScissorGame rsg = new ca141.robward.RockPaperScissorGame(3);
 
         boolean continueGame = true;
-
-        int move = 0;
-
+        int move;
         @SuppressWarnings("resource")
 
         Scanner keyboard = new Scanner(System.in);
 
         while(continueGame)
         {
-
             System.out.println(rsg.moveChoices());
-
-
 
             System.out.println("Enter Move:(1,2,or 3):");
 
@@ -30,7 +24,6 @@ public class PlayGame {
             rsg.playRound(move);
 
             System.out.printf("AI %s!%n", rsg.getAIOutcome().toString());
-
             System.out.printf("Player %s!%n", rsg.getPlayerOutcome().toString());
 
 
@@ -41,7 +34,6 @@ public class PlayGame {
             if(rsg.isGameOver())
             {
                 System.out.println(rsg.currentWinTotal());
-
                 System.out.println("Do you want to Play Again(1 - Yes , 2 - No):");
 
                 int answer = keyboard.nextInt();
@@ -62,6 +54,5 @@ public class PlayGame {
 
         System.out.println("Overall Totals:");
         System.out.println(ca141.robward.RockPaperScissorGame.overallWinTotals());
-
     }
 }
